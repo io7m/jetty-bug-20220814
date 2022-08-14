@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration xmlns="http://ch.qos.logback/xml/ns/logback"
+               debug="false">
+
+  <appender
+    name="STDERR"
+    class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%level: %logger: %msg%n</pattern>
+    </encoder>
+    <target>System.err</target>
+  </appender>
+
+  <logger name="org.eclipse.jetty.server.Server"
+          level="ERROR"/>
+  <logger name="org.eclipse.jetty.server.handler.ContextHandler"
+          level="ERROR"/>
+  <logger name="org.eclipse.jetty.util.ssl.SslContextFactory"
+          level="ERROR"/>
+  <logger name="org.eclipse.jetty.server.AbstractConnector"
+          level="ERROR"/>
+  <logger name="org.eclipse.jetty" level="INFO"/>
+
+  <logger name="com.github.dockerjava"
+          level="ERROR"/>
+  <logger name="org.testcontainers"
+          level="ERROR"/>
+  <logger name="com.zaxxer.hikari"
+          level="INFO"/>
+  <logger name="com.io7m.blackthorne"
+          level="INFO"/>
+
+  <root level="TRACE">
+    <appender-ref ref="STDERR"/>
+  </root>
+
+</configuration>
