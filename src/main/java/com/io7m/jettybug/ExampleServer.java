@@ -69,6 +69,8 @@ public final class ExampleServer
      */
 
     final var sessionIds = new DefaultSessionIdManager(server);
+    server.setSessionIdManager(sessionIds);
+
     final var sessionHandler = new SessionHandler();
 
     final var sessionStore = new FileSessionDataStore();
